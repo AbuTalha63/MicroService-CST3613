@@ -20,12 +20,13 @@ public class ABCService {
     //way u know its a constructor: same name as class
     public ABCService() {
         System.out.println("I am alive: " + new Date());
+        map.put("upper-all",this::getABC);
         map.put("upper-vowels",this::getVowelsUpper);
-        map.put("upper-all",this::getVowelsUpper);
-        map.put("upper-consonants",this::getVowelsUpper);
-        map.put("lower-vowels",this::getVowelsUpper);
-        map.put("lower-all",this::getVowelsUpper);
-        map.put("lower-consonants",this::getVowelsUpper);
+        map.put("upper-consonants",this::getConsonantsUpper);
+
+        map.put("lower-all",this::getabc);
+        map.put("lower-vowels",this::getVowelsLower);        
+        map.put("lower-consonants",this::getConsonantsLower);
     }
 
     public List<String> getData(String key) { 

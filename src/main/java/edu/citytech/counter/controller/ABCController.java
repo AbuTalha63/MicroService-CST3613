@@ -11,6 +11,11 @@ public class ABCController {
 
     @ Inject ABCService service;
 
+    @Get(value = "/letters/{mode}")              
+    public Object getData( String mode ) {
+        return service.getData(mode);
+    }
+
     @Get(uri= "upper-vowels")              //default since no uri associated (was before, now uri added: no uri = default)
     public Object dev() {                                       //method name does not matter
         return service.getVowelsUpper();

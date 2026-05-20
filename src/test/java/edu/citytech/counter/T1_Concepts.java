@@ -10,6 +10,8 @@ public class T1_Concepts {
 
         int a = 0;
         Supplier<Integer> s1 = null;
+        System.out.println(s1);
+        System.out.println(a);
     }
 
 }

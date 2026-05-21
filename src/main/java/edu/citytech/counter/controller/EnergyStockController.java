@@ -1,7 +1,6 @@
 package edu.citytech.counter.controller;
 //Developer: Usman, Muhammad | @AbuTalha63 on GitHub
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +23,8 @@ public class EnergyStockController {
         var data = service.getDividendStocks();
         map.put("data", service.getDividendStocks());
         map.put("size", data.size());
+
+        System.out.println("Developer: Usman, Muhammad");
 
         return map;
     }

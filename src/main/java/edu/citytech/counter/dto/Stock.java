@@ -6,7 +6,7 @@ import com.learning.java.data.annotation.Column;
 import io.micronaut.serde.annotation.SerdeImport;
 
 @SerdeImport
-public class EnergyStock {
+public class Stock {
 
     @Column(index = "0")
     private int rank;
@@ -147,7 +147,8 @@ public class EnergyStock {
 
     @Override
     public String toString() {
-        return "EnergyStock [rank=" + rank + ", symbol=" + symbol + ", quantRating=" + quantRating + ", marketCapInBillions="
+        return "Stock [rank=" + rank + ", symbol=" + symbol + ", quantRating="
+                + quantRating + ", marketCapInBillions="
                 + getMarketCapInBillions() + ", divYield=" + divYield + "]";
     }
 

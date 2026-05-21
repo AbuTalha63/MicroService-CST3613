@@ -7,8 +7,8 @@ import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import edu.citytech.counter.dto.EnergyStock;
-import edu.citytech.counter.services.EnergyStockService;
+import edu.citytech.counter.dto.Stock;
+import edu.citytech.counter.services.StockService;
 
 public class T2_EnergyStocks {
 
@@ -18,7 +18,7 @@ public class T2_EnergyStocks {
 
         System.out.println(System.getenv("CST_3613_DATA"));
 
-        EnergyStockService service = new EnergyStockService();
+        StockService service = new StockService();
 
         int actual = service.size();
         int expected = 232;
@@ -32,8 +32,8 @@ public class T2_EnergyStocks {
     @DisplayName("Has Dividend payout count")
     void t2() {
 
-        EnergyStockService service = new EnergyStockService();
-        List<EnergyStock> list = service.getDividendStocks();
+        StockService service = new StockService();
+        List<Stock> list = service.getDividendStocks();
 
         int actual = list.size();
         int expected = 150;
@@ -44,8 +44,8 @@ public class T2_EnergyStocks {
     @DisplayName("Market cap > Billion")
     void t3() {
 
-        EnergyStockService service = new EnergyStockService();
-        List<EnergyStock> list = service.getMarketCapInBillions();
+        StockService service = new StockService();
+        List<Stock> list = service.getMarketCapInBillions();
 
         int actual = list.size();
         int expected = 150;

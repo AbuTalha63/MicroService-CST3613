@@ -65,6 +65,10 @@ public class EnergyStock {
         return marketCap;
     }
 
+        public float getMarketCapInBillions() {
+        return marketCap / 1_000_000_000;
+    }
+
     public void setMarketCap(float marketCap) {
         this.marketCap = marketCap;
     }
@@ -134,5 +138,12 @@ public class EnergyStock {
     @Column(index = "11")
     private String momentum;
     @Column(index = "12")
-    private String ePSRev;;
+    private String ePSRev;
+
+    @Override
+    public String toString() {
+        return "EnergyStock [rank=" + rank + ", symbol=" + symbol + ", quantRating=" + quantRating + ", marketCapInBillions="
+                + getMarketCapInBillions() + ", divYield=" + divYield + "]";
+    }
+
 }

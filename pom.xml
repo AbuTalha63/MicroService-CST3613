@@ -139,6 +139,7 @@
         </configuration>
       </plugin>
     </plugins>
+    <finalName>counter-usman</finalName>
   </build>
 
 </project>

@@ -5,7 +5,8 @@ import java.util.List;
 import com.learning.java.data.repository.ExcelRepository;
 
 import edu.citytech.counter.dto.EnergyStock;
-
+import jakarta.inject.Singleton;
+@Singleton
 
 public class EnergyStockService {
 
@@ -45,8 +46,8 @@ public class EnergyStockService {
         List<EnergyStock> billClub = new ArrayList<>();
 
         for (EnergyStock energyStock : list) {
-            if (energyStock.getMarketCap() > 1_000_000_000){   //Since the getMarketCapInBillions method returns the marketCap,
-                billClub.add(energyStock);                      //just divided by a Billion, we must utilize the regular getMarketCap method
+            if (energyStock.getMarketCapInBillions() >= 1){   //Previously: you did GetMarketCap() > 1_000_000_000 | WRONG
+                billClub.add(energyStock);                    //Now: GetMarketCapInBillions() >= 1 | CORRECT
             }            
         }
         return billClub;

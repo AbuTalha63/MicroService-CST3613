@@ -2,6 +2,9 @@ package edu.citytech.counter.dto;
 
 import com.learning.java.data.annotation.Column;
 
+import io.micronaut.serde.annotation.SerdeImport;
+
+@SerdeImport
 public class EnergyStock {
 
     @Column(index = "0")

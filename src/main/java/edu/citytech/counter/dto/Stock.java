@@ -144,12 +144,22 @@ public class Stock {
     private String momentum;
     @Column(index = "12")
     private String ePSRev;
+    @Column(index = "13")
+    private String category;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     @Override
     public String toString() {
         return "Stock [rank=" + rank + ", symbol=" + symbol + ", quantRating="
                 + quantRating + ", marketCapInBillions="
-                + getMarketCapInBillions() + ", divYield=" + divYield + "]";
+                + getMarketCapInBillions() + ", divYield=" + divYield + ", category=" + category + "]";
     }
 
 }

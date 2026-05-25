@@ -1,6 +1,5 @@
 package edu.citytech.counter.controller;
 //Developer: Usman, Muhammad | @AbuTalha63 on GitHub
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,12 +15,13 @@ public class StockController {
     @Inject
     StockService service;
 
-    @Get(value = "/dividends")
-    public Object getAll() {
+    @Get(value = "/{type}")
+    public Object getAll(String type) {
 
         Map<String, Object> map = new HashMap<>();
-        var data = service.getDividendStocks();
-        map.put("data", service.getDividendStocks());
+        var data = type.equals("dividends") ? service.getDividendStocks() : service.getAll();
+        
+        map.put("data", data);
         map.put("size", data.size());
 
         System.out.println("Developer: Usman, Muhammad");

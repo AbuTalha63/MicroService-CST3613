@@ -21,7 +21,7 @@ public class T2_EnergyStocks {
         StockService service = new StockService();
 
         int actual = service.size();
-        int expected = 232;
+        int expected = 483;
         assertEquals(expected, actual);
 
         System.out.println("Count: " + service.size());
@@ -36,7 +36,7 @@ public class T2_EnergyStocks {
         List<Stock> list = service.getDividendStocks();
 
         int actual = list.size();
-        int expected = 150;
+        int expected = 299;
         assertEquals(expected, actual);
     }
 
@@ -48,7 +48,7 @@ public class T2_EnergyStocks {
         List<Stock> list = service.getMarketCapInBillions();
 
         int actual = list.size();
-        int expected = 150;
+        int expected = 330;
 
         list.forEach(System.out::println);
 

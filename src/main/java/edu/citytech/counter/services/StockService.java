@@ -18,17 +18,16 @@ public class StockService {
     static {
 
         categories.add(new Category(1, "Energy"));
-        categories.add(new Category(1, "REITs"));
-        categories.add(new Category(1, "ConsumerStaples"));
-        categories.add(new Category(1, "Gaming"));
+        categories.add(new Category(2, "REITS"));
+        categories.add(new Category(4, "ConsumerStaples"));
+        categories.add(new Category(8, "Gaming"));
 
-        String[] files = {"Energy", "REITs", "ConsumerStaples", "Gaming"};
 
         int sheetNumber = 0, skip = 1;
 
-        for (String aFile : files) {
+        for (var category : categories) {
 
-            String fullName = DIR + "/" + aFile + ".xlsx";
+            String fullName = DIR + "/" + category.category() + ".xlsx";
             var repository = new ExcelRepository<Stock>(fullName, sheetNumber, skip);		
 		    repository.findAll(Stock.class, list::add);
         }
@@ -58,6 +57,24 @@ public class StockService {
 
         public List<Stock> getAll() {
         return list;
+    }
+
+        public List<Stock> filter(int code) {
+
+            List<Stock> filtredList = new ArrayList<>(); 
+
+            for (Category category : categories) {
+
+                boolean display = (category.code() & code) > 0;
+                if (display) {
+                    var newList = list.stream()
+                                       .filter(e -> e.getCategory().equals(category.category() ))
+                                       .toList();
+
+                    filtredList.addAll(newList);
+                }
+            }
+        return filtredList;
     }
 
     public List<Stock> getMarketCapInBillions() {

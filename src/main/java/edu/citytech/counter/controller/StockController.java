@@ -28,4 +28,15 @@ public class StockController {
 
         return map;
     }
+
+    @Get(value = "/code/{code}")
+    public Object getByCode(int code) {
+
+        Map<String, Object> map = new HashMap<>();
+        var data = service.filter(code);
+        map.put("data", data);
+        map.put("size", data.size());
+
+        return map;
+    }
 }

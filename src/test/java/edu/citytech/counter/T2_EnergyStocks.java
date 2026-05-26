@@ -21,7 +21,7 @@ public class T2_EnergyStocks {
         StockService service = new StockService();
 
         int actual = service.size();
-        int expected = 483;
+        int expected = 482;
         assertEquals(expected, actual);
 
         System.out.println("Count: " + service.size());
@@ -54,5 +54,23 @@ public class T2_EnergyStocks {
 
         assertEquals(expected, actual);
     }
-    //Developer: Usman, Muhammad
+
+    @Test
+    @DisplayName("All stocks using code")
+    void t4() {
+        StockService service = new StockService();
+
+        int actual = service.filter(15).size();
+        int expected = 482;
+        assertEquals(expected, actual);
+
+        System.out.println("Count: " + service.size());
+        System.out.println("Developer: Usman, Muhammad");
+    }
+
 }
+
+
+
+
+

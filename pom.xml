@@ -93,6 +93,29 @@
       <version>1.2</version>
     </dependency>
     <!-- End Excel -->
+
+    <!-- Start MongoDB -->
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+      <version>3.12.14</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongodb-driver-sync</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <!-- End MongoDB -->
+
+    <!-- GSON start -->
+    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+    <!-- end GSON -->
+
   </dependencies>
   <build>
     <plugins>

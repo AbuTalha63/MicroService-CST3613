@@ -3,6 +3,7 @@ package edu.citytech.counter.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import edu.citytech.counter.services.REITSService;
 import edu.citytech.counter.services.StockService;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
@@ -14,6 +15,9 @@ public class StockController {
 
     @Inject
     StockService service;
+
+    @Inject
+    REITSService reitsService;
 
     @Get(value = "/{type}")
     public Object getAll(String type) {
@@ -37,6 +41,18 @@ public class StockController {
         map.put("data", data);
         map.put("size", data.size());
 
+        return map;
+    }
+
+
+  @Get(value = "/reits")
+    public Object getAllReits() {
+
+        Map<String, Object> map = new HashMap<>();
+        var data = reitsService.findAll();
+        map.put("reitsData", data);
+        map.put("size", data.size());
+        
         return map;
     }
 }

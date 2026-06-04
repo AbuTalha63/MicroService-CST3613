@@ -45,6 +45,7 @@ public class ABCService {
 
     private static final String[] alphabet = ABC.split("");
     private static final String[] _alphabet = ABC.toUpperCase().split("");
+    private static final test[] test = ABC.toUpperCase().split(""); 
 
     //Full alphabet
     public List<String> getABC() {
